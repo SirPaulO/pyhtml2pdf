@@ -1,0 +1,22 @@
+# https://pagedjs.org/documentation/2-getting-started-with-paged.js/#starting-paged.js
+# https://www.quackit.com/css/at-rules/css_top-left_at-rule.cfm
+# https://www.tutorialspoint.com/css/css_at-rule-page.htm
+# https://github.com/kumaF/pyhtml2pdf?tab=readme-ov-file
+# https://vanilla.aslushnikov.com/?Page.printToPDF
+# https://github.com/SergeyPirogov/webdriver_manager
+# https://stackoverflow.com/questions/2760620/how-to-declare-a-div-in-page-top-left
+# https://stackoverflow.com/questions/20946723/chrome-does-not-support-the-css-page
+
+FROM python:3.11-slim AS base
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends chromium-driver \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
+
+WORKDIR /app
+
+COPY . /app/
+
+RUN pip install -r requirements.txt
+

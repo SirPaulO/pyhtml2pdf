@@ -1,0 +1,3340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <title></title>
+  <style>
+            @media screen {
+                body {
+                    background-color: #ffffff;
+                }
+                .top-right {
+                    font-size: x-small;
+                    color: #000000;;
+                    font-family: arial, serif;
+                    float: right;
+                    position: relative;
+                }
+                .top-left {
+
+                    width: 35%;
+                    height: 4.72rem;
+                    background:  url("https://s3-admax-live.s3.amazonaws.com/media/theme/logo/images_1.png")  no-repeat 0 0;
+                    background-size: contain;
+                    margin-top: 5px;
+                    margin-left: 9px;
+                    margin-bottom: 10px;
+                }
+
+                .bottom-right {
+
+                    color: #000000;;
+                    width: 20%;
+                    height: 3rem;
+                    background:   url(https://s3-admax-live.s3.amazonaws.com/static/img/AIIC-logo.jpg) no-repeat 0 0 ;
+                    background-position: left, right;
+                    background-size: contain;
+                    float: right;
+                    position: relative;
+                    margin-bottom: 20px;
+                }
+                .bottom-left {
+
+                    width: 25%;
+                    /*font-size: x-small;*/
+                    background-position: left, right;
+                    background-size: contain;
+                    position: relative;
+                    float: left;
+                }
+
+                .page-break {
+                    page-break-before: always;
+                    height: 200px;
+                }
+                hr {
+                    margin-top: 20px;
+                    width: 100%;
+                    height: 0;
+                    border: medium none;
+                    border-top: 1px dashed #837b7b!important
+                }
+                .table-item {
+                    width: 100%;
+                }
+            }
+
+            @media print {
+                .page-break {
+                    page-break-before: always;
+                }
+                hr {
+                    display: none;
+                }
+                .top-left {
+                    display: none;
+                }
+                .top-right {
+                    display: none;
+                }
+                .bottom-left {
+                    display: none;
+                }
+                .bottom-right {
+                    display: none;
+                }
+                .table-item {
+                    table-layout: fixed;
+                    width: 100%;
+                }
+
+            }
+
+            @page {
+                size: A4;
+                margin: 2.47cm 1.41cm 2.82cm 1.41cm;
+                @bottom-center {
+                    content: counter(page) " of " counter(pages);
+                    font-size: x-small;
+                }
+                @bottom-right {
+                    content: '78 Westbourne Avenue';
+                    color: #000000;;
+                }
+                @bottom-right {
+
+                        content: "";
+                        width: 30%;
+                        height: 1.15cm;
+                        margin-top: 25px;
+                        background: ,  url(https://s3-admax-live.s3.amazonaws.com/static/img/AIIC-logo.jpg) no-repeat 0 0 ;
+                        background-position: left, right;
+                        background-size: contain;
+                    }
+
+                    @bottom-left {
+
+                            content: "78 Westbourne Avenue 07-08-2024";
+                            width: 25%;
+                            font-size: x-small;
+                            background-position: left, right;
+                            background-size: contain;
+                        }
+
+                @top-left {
+
+                    content: "";
+                    width: 35%;
+                    height: 2cm;
+                    background:  url("https://s3-admax-live.s3.amazonaws.com/media/theme/logo/images_1.png")  no-repeat 0 0;
+                    background-size: contain;
+                    margin-top: 5px;
+                    margin-left: 9px;
+                    margin-bottom: 10px;
+                }
+                @top-right {
+                    content: "T 0191 228 6966\00000aE adina@aidanproperty.co.uk\00000a";
+                    white-space: pre;
+                    font-size: x-small;
+                    color: #000000;;
+                    font-family: arial;
+                }
+            }
+
+
+
+
+
+                .bold {
+                    font-weight: bold;
+                }
+
+                li {
+                    padding-bottom: .7rem;
+                }
+
+                .box {
+                    border: 1px solid black;
+                    padding: 1rem;
+                }
+
+
+
+                .signature-field {
+                    width: 100%;
+                    padding-bottom: 3rem;
+                    border-bottom: 2px dotted black;
+                }
+
+                .invisible {
+                    background-color: transparent;
+                    width: 33%;
+                    max-width: 280px;
+                }
+
+                .single {
+                    width: 100%;
+                    height: 100%;
+                }
+                .signature-align{
+                    vertical-align: baseline;
+                }
+
+
+
+                table.table-first-page td {
+                    padding: .4rem;
+                }
+
+
+                strong {
+                    font-weight: normal;
+                }
+
+
+                table {
+                    width: 100%;
+                    list-style: none;
+                }
+
+                td:nth-child(1) {
+                    background-color: #d7dadc;
+                }
+
+                table > * {
+                    font-size: 9pt;
+                }
+
+                th,
+                td,
+                .table-sub-header,
+                .table-header{
+                    padding: .2rem;
+                }
+
+                th {
+                    background-color: #ccc;
+                    max-width: 25%;
+                    width: 100%;
+                }
+
+                td {
+                    max-width: 27%;
+                    width: 100%;
+                }
+
+                h2, h1 {
+                    font-size: 18pt;
+                }
+
+                .inventory-name {
+                    text-align: center;
+                    font-size: 9pt;
+                    border-radius: 3px;
+                    background-color: darkgrey;
+                    height: 30px;
+                    width: 100%;
+                    margin-top: 1px;
+                    margin-bottom: 1px;
+                    color: white;
+                    font-weight: 500;
+                    padding-top: 10px;
+                }
+
+                p {
+                    text-align: justify;
+                  }
+
+                .small-column {
+                    width: 20%;
+                }
+
+                .large-column {
+                    width: 50%;
+                }
+
+                .page-break {
+                    page-break-before: always;
+                }
+
+                .utilities-title {
+                    font-size: 12pt;
+                }
+
+                .meter-reading-table td {
+                    width: 20px;
+                }
+
+                .room-header,
+                .table-sub-header {
+                    font-size: 1rem;
+                    margin: 0;
+                    margin-left: 2px;
+                    width: 98.4%;
+
+                }
+
+                .table-header {
+                    width: 99%;
+
+                    font-size: 12pt;
+                    height: 20px;
+                }
+
+                .glossary-table {
+                    width: 100%;
+                }
+
+                .glossary-table .row {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    padding: 10px 0px;
+                    font-size: 10pt;
+                }
+
+                .utilities-table td, .utilities-table th{
+                    background-color: white !important;
+                    padding: 0px !important;
+                    margin: 0px;
+                    border: 0px !important;
+                    font-size: 9pt;
+                }
+
+
+
+
+
+
+                * {
+                    font-family: arial;
+                }
+
+                .title {
+
+                    color: #186090;
+                    font-weight: normal;
+                }
+
+
+
+
+                .table-sub-header, th {
+                    background-color: #DCDCDC;;
+                    color: #000000;;
+                }
+
+                td {
+                    background-color: #EEE9E9;;
+                    color: #000000;;
+                }
+
+                .large-row {
+                    width: 20%;
+                    background-color: #EEE9E9;;
+                    color: #000000;;
+                    border: .3rem solid white;
+                    border-left: none;
+                }
+
+                .table-header {
+
+                    background-color: #186090;
+                    color: #FFFFFF;;
+                }
+
+                .heading-1-header {
+                    background-color: #186090;
+                }
+
+
+
+                .room-header {
+                    padding: .5rem 1rem;
+                    background-color: #186090;
+                    color: #FFFFFF;;
+                }
+
+                .room-sub-header {
+                    padding: .3rem 1rem;
+                    background-color: #186090;
+                    color: #186090;;
+                }
+
+                .room-item-header {
+                    background-color: #186090;
+                    color: black;
+                }
+
+                .dilapidation-header {
+                    background-color: darkgrey;
+                    color: black;
+                }
+
+                .number-header {
+                    width: 5%;
+                    border-right: none;
+                }
+
+                .item-header {
+                    text-align: center;
+                    border-left: none;
+                }
+
+                .cell_size {
+                    width: 150px;
+                    height: 200px;
+                }
+
+
+                .room-images-container {
+                    display: flex;
+                    flex-flow: row wrap;
+                    width: 100%;
+                    align-items: center;
+                    margin-left: 34px;
+                }
+
+                .property-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content:center;
+                }
+
+                .image-property-photo {
+                    height: 300px;
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    max-width: 300px;
+                    max-height: 300px;
+                    margin: 5px;
+                }
+
+
+
+                .overview-photo {
+                    width: 100%;
+                    height: 100%;
+                    background-size: contain;
+                    background-position: inherit;
+                    background-repeat: no-repeat;
+                    max-width: 300px;
+                    max-height: 300px;
+                    margin: 5px;
+                    display: inline-flex;
+                }
+
+
+                .image-utitities {
+                    width: 300px;
+                    height: 200px;
+                    display:block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 0;
+                }
+
+
+                .additional-container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+
+                .additional-text {
+                    margin-top: 0;
+                    margin-left: 18px;
+                    font-size: 8pt;
+                }
+                .additional-img {
+                    width: 80%;
+                    max-height: 250px;
+                }
+
+                .overview-img {
+                    width: auto;
+                    max-width: 300px;
+                    max-height: 250px;
+                    min-width: 200px;
+                }
+
+                .image-additional-information {
+                    width: 250px;
+                    max-height: 200px;
+                    display:block;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 0;
+                }
+
+                .additional-information-center{
+                  text-align: center;
+                }
+
+                #columns section {
+                  columns: 2;
+                  column-gap: 2cm;
+
+                }
+
+                .north {
+                    -ms-transform:rotate(0deg);
+                    -webkit-transform:rotate(0deg);
+                    }
+
+                .west {
+                    -ms-transform:rotate(90deg);
+                    -webkit-transform:rotate(90deg);
+                    transform:rotate(90deg) scale(0.8, 1);
+                    padding-top: 0rem;
+                    max-width: 300px;
+                    max-height: 300px;
+                    margin: 10px auto;
+                }
+
+                .south {
+                    -ms-transform:rotate(180deg);
+                    -webkit-transform:rotate(180deg);
+                    transform:rotate(180deg);
+                    }
+
+                .east {
+                    -ms-transform:rotate(270deg);
+                    -webkit-transform:rotate(270deg);
+                    transform:rotate(270deg) scale(0.8, 1);
+                    padding-top: 0rem;
+                    }
+
+
+                .alert-autosigned {
+                   background-color :#f8d7da;
+                   color: #000000;
+                   text-align: center;
+                   font-weight: bold;
+                   position: relative;
+                   padding: .75rem 1.25rem;
+                   margin-bottom: 1rem;
+                   border: 1px solid transparent;
+                   border-radius: .25rem;
+                }
+
+
+                .image-property-photo-land-new {
+                    max-width: 300px;
+                    max-height: 300px;
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    margin: 5px;
+                    width: 250px;
+                }
+
+                .image-property-photo-port-new {
+                    max-width: 300px;
+                    max-height: 300px;
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    margin: 5px;
+                    width: 250px;
+                }
+
+                .dilapidation-photo {
+                    width: 120px;
+                }
+
+                .landscape-photo {
+                    padding: 10px;
+                    width: 250px;
+                }
+
+                .portrait-photo {
+                    padding: 10px;
+                    width: 250px;
+                    max-height: 400px;
+                }
+
+  </style>
+  <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+</head>
+<body>
+  <div class="top-right">
+    T 0191 228 6966<br>
+    E adina@aidanproperty.co.uk<br>
+    <br>
+  </div>
+  <div class="top-left"></div>
+  <h1 style="font-size: 20pt;" class="title">Check Out</h1>
+  <table class="table-first-page">
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Client Name</td>
+      <td>Aidan Property Construction Ltd.</td>
+      <td class="large-column" rowspan="17"><img class="image-property-photo-port-new north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/1_14E05546-D714-4BA0-85CE-C0134723D687.jpg" alt="1_14E05546-D714-4BA0-85CE-C0134723D687"></td>
+    </tr>
+    <tr>
+      <td>Tenant Present</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Clerk</td>
+      <td>Julie Skipp</td>
+    </tr>
+    <tr>
+      <td>Date</td>
+      <td>07/08/2024</td>
+    </tr>
+    <tr>
+      <td>Property Description</td>
+      <td>2 bedroom Unfurnished Flat</td>
+    </tr>
+    <tr>
+      <td>Property Address</td>
+      <td>78 Westbourne Avenue<br>
+      Gateshead<br>
+      Tyne and Wear<br>
+      NE84NP<br></td>
+    </tr>
+  </table>
+  <div class="page-break"></div>
+  <div class="bottom-left">
+    78 Westbourne Avenue 07-08-2024
+  </div>
+  <div class="bottom-right"></div>
+  <hr>
+  <p class="guidance-info"></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 12px;">﻿</span><span>﻿</span><span style="font-size: 8px;">﻿</span><span style="font-size: 8px;">﻿</span><b><span style="font-size: 12px;">Check Out : Guidance Notes to Tenants</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">You are reminded that it is your responsibility at the beginning of the tenancy to note any specific discrepancies on the inventory that you do not agree with i.e. marks on walls, carpets, etc. If no such additional notes are made by the tenant at the start of the tenancy, the inventory will be deemed as accepted as read. If no inventory is available, notes may be made on the Check In report compiled by No Letting Go.</span></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">The inventory report (where available) has been prepared by No Letting Go. The condition of the property at the start of the tenancy, as described in the inventory will be compared to the condition of the property at the end of the tenancy. Details of any alterations to the property after the inventory has been agreed upon should be noted on a separate addendum sheet and agreed by the tenant and the managing agent/landlord. At the end of the tenancy a `Check Out report will be conducted to determine any changes to the inventory. The Tenant should gain permission from the managing agent/landlord if they wish to remove or store any items during the tenancy and this should be confirmed in writing by the managing agent/landlord</span>.</p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">The inventory clerk cannot undertake to move heavy items of furniture or to make searches in inaccessible locations such as loft spaces, cellars, locked rooms and high level cupboards, or to unpack items. We reserve the right not to handle or move items deemed to be fragile or valuable. In addition the inventory clerk reserves the right not to handle items that may be of a health hazard and to generalise/summarise on such items deemed to be unsuitable for further inspection.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Disclaimer</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">This check out has been prepared by an inventory clerk who is not an expert in buildings, furnishings, decoration, woods, antiques or a qualified surveyor.</span></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">This check out relates only to the furniture and all the landlord's equipment and contents in the property. It is no guarantee or report on the adequacy of, or safety of any such equipment or contents, merely a record that such items exist in the property at the date of preparing the inventory and the superficial condition of same.</span></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">No Letting Go will not take water meter readings unless the meter is clearly visible within the property or attached to an exterior wall at low/accessible level.</span></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">Windows throughout the property have not been tested for function or operation. Descriptions are purely based on the superficial appearance of windows, frames and locks. No Letting Go can accept no liability arising from any failure of the windows or parts thereof to function properly at all.</span></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">The inventory clerk cannot undertake the testing of appliances and is not qualified to report on the safety of any appliances other than a general visual inspection of condition. All electrical items are deemed to be complete with fixings (plugs, cables etc) unless otherwise stated.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Furniture & Furnishings (Fire) (Safety) Regulations 1988 (1993)</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">The fire and safety regulations regarding furnishing, gas, electrical and similar services are ultimately the responsibility of the instructing principal. Where the Inventory notes "Fire Regulation Label Attached", this should not be interpreted to mean the item complies with the "furniture and furnishings (fire) (safety) (amendments) 1993". It is a record that the item had a label as described or similar to that detailed in the "guide" published by the Department of Trade and Industry January 1997 (or subsequent date). It is not a statement that the item can be considered to comply with the Regulations.</span></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">All items should be returned to their original position (as detailed on the inventory); this includes stored or boxed items not used during the tenancy. Any items listed as `Not Seen/Found? could result in a replacement cost or a charge being made to the tenant. Managing agents/landlord may also charge for the removal of unapproved items left by the tenant at the end of the tenancy that were not included in the original inventory.</span></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">At the time of the property check out, all personal items (including consumable items) should have been removed and cleaning of the property completed. No further cleaning will be permitted once the check out inspection has commenced. The tenant will have been advised of the date and time of the check out and must provide access, or let the appointed clerk know the details of their departure from the property. Additional costs may be incurred if the clerk is not able to complete the check out inspection due to the tenant not being ready to vacate or if they are delayed by more than 20 minutes.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Cleaning</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">Soiling is not considered to be fair wear & tear, (as defined by the House of Lords as `reasonable use of the premises by the tenant and the ordinary operation of natural forces, i.e; the passage of time). The tenant is liable for the property to be cleaned to the same standard as detailed to the inventory at the start of the tenancy.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Soft Furnishings</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">Excessive discolouring which cannot be attributed to sun bleaching and/or the passage of time, soiling or damage may result in repair or cleaning costs being charged to the tenant. Discolouration due to smoke, staining, burns or tears to curtains may also incur costs to the tenant.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Flooring</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">Carpets should either be professionally cleaned or vacuumed including edges and corners depending on the level of soiling and/or the terms of the tenancy agreement. Receipts for professional cleaning should be given to the clerk at the time of the check out inspection. Hard floors require sweeping and mopping where necessary (in accordance with any specialist cleaning materials/advice provided by the managing agent/landlord). The tenant may be charged by the managing agent/landlord for repairs or replacement costs due to soiling, staining or damage such as cigarette or iron burns.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Decoration</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">As specified in the majority of tenancy agreements, the tenant should gain permission from the managing agent/landlord prior to putting nails, pins and other fixtures into walls and ceilings and should avoid the use of tac or tape. Additional marks/fittings will be noted at the check out and any damage or repair work required in order to make good may be charged to the tenant by the managing agent/landlord.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Beds & Linen</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">Mattresses, divan bases, pillows, and duvets will be inspected for soiling where practically possible. Costs may be incurred by the tenant for cleaning, compensation or a percentage of the replacement charge by the managing agent/landlord in the event that any such items are soiled beyond that noted to the inventory. Beds should not be made up at the time of the check out inspection and any linen should be left cleaned, pressed and folded.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Kitchen Surfaces and Sinks</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">Kitchen surfaces and sinks will be inspected for knife cuts, cup marks, scorch and burn damage. Using appropriate items such as chopping boards and heat pads will help prevent damage.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Crockery, chinaware, kitchen utensils</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">All items will be checked for soiling, chips and damage. If damage has occurred that is not considered as consistent with fair wear & tear, compensation or replacement costs may be incurred by the tenant.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Keys</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">All keys listed in the inventory should be kept safely and handed back at the check out. Should any keys be lost or not returned to the managing agent, landlord or inventory clerk, the tenant may be charged for replacement keys or possibly for the changing of locks. Any additional keys cut during the tenancy should also be returned by the tenant.</span></p>
+  <p class="MsoNormal" style="text-align:justify"><b><span style="font-size: 12px;">Gardens & Exterior Areas</span></b></p>
+  <p class="MsoNormal" style="text-align: justify; line-height: 1;"><span style="font-size: 8px;">Most tenancy agreements state that the tenant is responsible for the maintenance of gardens and exterior areas such as driveways unless expressly agreed otherwise. This includes the cutting of lawns, weeding and maintaining the garden, paths, driveways, flowerbeds etc according to the season. If the standard is found to be below the condition as detailed to the inventory, (with consideration given for a change in season) the tenant may be charged for necessary work to bring the affected area back to the required level.</span></p>
+  <div class="page-break"></div>
+  <div class="bottom-left">
+    78 Westbourne Avenue 07-08-2024
+  </div>
+  <div class="bottom-right"></div>
+  <hr>
+  <h1 style="font-size: 20pt;" class="title">Glossary of Terms</h1>
+  <h3 style="font-size: 14pt;">All items listed are in a "Good condition" and the cleanliness standard is "Good domestic clean" , unless otherwise stated.</h3>
+  <h2 style="font-size: 14pt;" class="bold">Condition</h2>
+  <div class="glossary-table">
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">1.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Brand new, unused condition</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Still in wrapper or with new tags/labels attached.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">2.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Good condition</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Signs of slight wear, generally lightly worn.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">3.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Fair condition</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Signs of age, frayed, small light stains and marks, discolouration.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">4.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Poor Condition</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Extensive signs of wear and tear, extensive stains/marks/tears/chips.Still functional.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">5.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Very Poor Condition</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Extensively damaged/faulty items, large stains, upholstery torn and/or dirty, pet odours/hairs.</span>
+      </div>
+    </div>
+  </div>
+  <h2 style="font-size: 14pt;" class="bold">Cleanliness</h2>
+  <div class="glossary-table">
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">1.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Professionally cleaned</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Everything immaculate, sparkling and dust free, appliances and sanitary ware spotless. Carpets steam cleaned, vacuumed. Floors swept. All furniture in order and clean. Linen freshly laundered.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">2.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Professional or hotel clean</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Everything immaculate, sparkling and dust free, appliances and sanitary ware spotless. Carpets steam cleaned, vacuumed. Floors swept. All furniture in order and clean. Linen freshly laundered.Cleaned to a professional standard but no receipt seen.</span>
+      </div>
+    </div>
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">3.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Good domestic clean</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Flooring vacuumed and swept. Appliances cleaned and free of loose dirt. Some carbon deposits to appliances may be visible but no loose debris or grease to the touch. Dust may be visible to areas not often seen - cupboards, tops of door frames etc. Sanitary ware in clean condition - no dust/soap deposits/loose hairs etc</span>
+      </div>
+    </div>
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">4.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Average domestic clean</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Domestic clean, but signs of dust to woodwork, kitchen units marked, appliances need additional cleaning. Carpets vacuumed and floors swept.Dust/hairs to sanitary ware - requiring further cleaning</span>
+      </div>
+    </div>
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">5.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Poorly cleaned</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Carpets need vacuum, all items dusty or dirty, kitchen and bathrooms require further cleaning to either a good domestic standard or to a professionally clean standard as applicable</span>
+      </div>
+    </div>
+    <div class="row">
+      <div style="width: 3%;">
+        <span class="bold">6.</span>
+      </div>
+      <div style="width: 22%;">
+        <span class="bold">Not clean</span>
+      </div>
+      <div style="width: 75%;">
+        <span>Property requires cleaning to a good domestic standard or professional standard to make available for next tenant as applicable.</span>
+      </div>
+    </div>
+  </div>
+  <div class="page-break"></div>
+  <table class="meter-reading-table">
+    <thead>
+      <tr>
+        <th colspan="5" class="utilities-title">Utilities</th>
+      </tr>
+      <tr>
+        <td style="width: 8px;">Type</td>
+        <td style="width: 20px; background-color: #d7dadc;">Location</td>
+        <td style="width: 20px; background-color: #d7dadc;">Supplier</td>
+        <td style="width: 20px; background-color: #d7dadc;">Serial No.</td>
+        <td style="width: 20px; background-color: #d7dadc;">Reading</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Gas</td>
+        <td></td>
+        <td></td>
+        <td>G4P (05195591600</td>
+        <td>05852</td>
+      </tr>
+      <tr>
+        <td>Electricity</td>
+        <td></td>
+        <td></td>
+        <td>816P0551607</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Electricity</td>
+        <td></td>
+        <td></td>
+        <td>H16P0551607</td>
+        <td>£22.18</td>
+      </tr>
+      <tr>
+        <td>Gas</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>£1007.49</td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="utilities-table">
+    <thead>
+      <tr>
+        <th colspan="2">
+          <h1 style="width: auto; text-align: start; padding-left: 10px; height: 10px; margin-bottom: 10px; margin-left: 0; font-size: 8pt; background-color: #d7dadc; color: black;" class="room-header">Meter Photographs</h1>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <div style="margin-top: 2%;">
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/180_8C0AB1D6-23FB-4F16-8500-3DBADBAA86A2.jpg" alt="180_8C0AB1D6-23FB-4F16-8500-3DBADBAA86A2">
+            <div>
+              <span style="margin-left: 4%; text-align: left">Bedroom 1 - Gas photo</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div style="margin-top: 2%;">
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/181_FC804920-0B03-432F-97C2-7A15A58DBC49.jpg" alt="181_FC804920-0B03-432F-97C2-7A15A58DBC49">
+            <div>
+              <span style="margin-left: 4%; text-align: left">Bedroom 1 - Electricity photo</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div style="margin-top: 2%;">
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/182_6B09FBAC-0632-44D4-B06E-94769019DD37.jpg" alt="182_6B09FBAC-0632-44D4-B06E-94769019DD37">
+            <div>
+              <span style="margin-left: 4%; text-align: left">Bedroom 3 - Electricity photo</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div style="margin-top: 2%;">
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/183_7B602BC7-213C-4BFC-832B-21C5FEE77053.jpg" alt="183_7B602BC7-213C-4BFC-832B-21C5FEE77053">
+            <div>
+              <span style="margin-left: 4%; text-align: left">Bedroom 1 - Gas photo</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 style="width: 95.4%; margin-left: 2px; height: auto;" class="room-header page-break">Garden Front</h1>
+  <table class="utilities-table">
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113646response-content-dispositioni.jfif" alt="32113646response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%"></div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/173_1007655A-0971-4FC4-8C96-F55E8E0CDFCF.jpg" alt="173_1007655A-0971-4FC4-8C96-F55E8E0CDFCF">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Garden Front</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/174_D22063F5-F329-4991-8F09-585D0FC416FD.jpg" alt="174_D22063F5-F329-4991-8F09-585D0FC416FD">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Garden Front</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/175_E4BBC99E-3228-40A6-A6B5-0B95FA747928.jpg" alt="175_E4BBC99E-3228-40A6-A6B5-0B95FA747928">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Garden Front</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="tabla-summary" class="table-item" style="margin-top:30px;">
+    <thead>
+      <tr>
+        <th style="width: 25px; text-align: center;" class="room-sub-header item-header">Item</th>
+        <th style="width: auto;" class="room-sub-header item-header">Description</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check In</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check Out</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: #EEE9E9;">
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">1.</td>
+        <td style="width: auto;">Comments</td>
+        <td style="width: auto;">A little blown in rubbish present, seasonal weeds</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 style="width: 95.4%; margin-left: 2px; height: auto;" class="room-header page-break">Entrance</h1>
+  <table class="utilities-table">
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113648response-content-dispositioni.jfif" alt="32113648response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%"></div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/2_2D074A9C-3FC8-4B8C-8EB7-59F54DE9D1EA.jpg" alt="2_2D074A9C-3FC8-4B8C-8EB7-59F54DE9D1EA">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/3_3631F469-9287-4A9D-A7BB-9770CD5109AB.jpg" alt="3_3631F469-9287-4A9D-A7BB-9770CD5109AB">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="tabla-summary" class="table-item" style="margin-top:30px;">
+    <thead>
+      <tr>
+        <th style="width: 25px; text-align: center;" class="room-sub-header item-header">Item</th>
+        <th style="width: auto;" class="room-sub-header item-header">Description</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check In</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check Out</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: #EEE9E9;">
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">1.</td>
+        <td style="width: auto;">Summary of cleanliness</td>
+        <td style="width: auto;">Clean to a good domestic standard</td>
+        <td style="width: auto; background-color: #EEE9E9;">Good domestic clean standard</td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">2.</td>
+        <td style="width: auto;">Decorative Order</td>
+        <td style="width: auto;">Good decorative order</td>
+        <td style="width: auto; background-color: #EEE9E9;">Good Condition</td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">3.</td>
+        <td style="width: auto;">Carpets and Flooring</td>
+        <td style="width: auto;">New</td>
+        <td style="width: auto; background-color: #EEE9E9;">Good Condition</td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 style="width: 95.4%; margin-left: 2px; height: auto;" class="room-header page-break">Bedroom 1</h1>
+  <table class="utilities-table">
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113663response-content-dispositioni.jfif" alt="32113663response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%"></div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/15_48DC11AC-AC2D-4EF7-B1B3-1507D12C8AE6.jpg" alt="15_48DC11AC-AC2D-4EF7-B1B3-1507D12C8AE6">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/16_3E473C69-5D59-435C-BC37-7D7A3BA91555.jpg" alt="16_3E473C69-5D59-435C-BC37-7D7A3BA91555">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/17_0097F3B0-2812-4F2F-BE37-FAF5FDADA679.jpg" alt="17_0097F3B0-2812-4F2F-BE37-FAF5FDADA679">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/18_61FE7E9F-396F-4FDA-ADBE-3963D8031260.jpg" alt="18_61FE7E9F-396F-4FDA-ADBE-3963D8031260">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="tabla-summary" class="table-item" style="margin-top:30px;">
+    <thead>
+      <tr>
+        <th style="width: 25px; text-align: center;" class="room-sub-header item-header">Item</th>
+        <th style="width: auto;" class="room-sub-header item-header">Description</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check In</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check Out</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: #EEE9E9;">
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">1.</td>
+        <td style="width: auto;">Summary of cleanliness</td>
+        <td style="width: auto;">Clean to a good domestic standard</td>
+        <td style="width: auto; background-color: #EEE9E9;">Good domestic clean standard</td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">2.</td>
+        <td style="width: auto;">Decorative Order</td>
+        <td style="width: auto;">Good decorative order</td>
+        <td style="width: auto; background-color: #EEE9E9;">Good Condition</td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">3.</td>
+        <td style="width: auto;">Carpets and Flooring</td>
+        <td style="width: auto;">New</td>
+        <td style="width: auto; background-color: #EEE9E9;">Good Condition</td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="dilap">
+    <thead>
+      <tr>
+        <th class="room-sub-header item-header">Item</th>
+        <th class="room-sub-header">Photograph</th>
+        <th class="room-sub-header">Condition</th>
+        <th class="room-sub-header">Action/Comments</th>
+        <th class="room-sub-header">Responsibility</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="5" style="background-color: darkgrey; color: black;" class="dilapidation-header">Cleanliness</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Floor - Dark grey fitted carpet</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/26_540603BE-D3F6-4B97-AB0B-77CCB55428DC.jpg" alt="540603BE-D3F6-4B97-AB0B-77CCB55428DC.jpg"></td>
+        <td>Few black spot marks</td>
+        <td>Cleaning required</td>
+        <td>Tenant</td>
+      </tr>
+      <tr>
+        <td colspan="5" style="background-color: darkgrey; color: black;" class="dilapidation-header">Other</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Window 1 -</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/27_CB7F329D-5A12-4641-AC19-D80A3A9E9BC0.jpg" alt="CB7F329D-5A12-4641-AC19-D80A3A9E9BC0.jpg"></td>
+        <td>Net curtain.<br>
+        Grey curtain left in place</td>
+        <td>Not consistent with inventory</td>
+        <td>Information only</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Fitted Units/Cupboards - White painted wooden frame<br>
+        White painted wood panelled door, white painted lever handle.<br>
+        Cream painted plaster walls, hardboard flooring.<br>
+        Electric meter<br>
+        Gas meter<br>
+        Consumer unit<br>
+        Alarm technician box</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/36_095F113F-1298-47D9-B298-C2D00639F434.jpg" alt="095F113F-1298-47D9-B298-C2D00639F434.jpg"><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/37_C86EEF98-62D4-4809-A516-FBB730C27B7B.jpg" alt="C86EEF98-62D4-4809-A516-FBB730C27B7B.jpg"><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/38_57C23D61-A24A-44BA-86D0-4302BFB9D29D.jpg" alt="57C23D61-A24A-44BA-86D0-4302BFB9D29D.jpg"></td>
+        <td>Items left</td>
+        <td>Removal required - to be removed</td>
+        <td>Tenant</td>
+      </tr>
+      <tr>
+        <td colspan="5" style="background-color: darkgrey; color: black;" class="dilapidation-header">Missing</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Heating/Air Conditioning - White single panelled radiator with end cap</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/32_FB3842AC-FABD-43BB-AD39-E2643D9D8E30.jpg" alt="FB3842AC-FABD-43BB-AD39-E2643D9D8E30.jpg"></td>
+        <td>LHS end cap missing</td>
+        <td>Not consistent with inventory</td>
+        <td>Tenant</td>
+      </tr>
+      <tr>
+        <td colspan="5" style="background-color: darkgrey; color: black;" class="dilapidation-header">Maintenance</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Walls - White painted textured paper</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/22_DE1A901F-B81C-4CC6-9F2B-DB74DBA98AA7.jpg" alt="DE1A901F-B81C-4CC6-9F2B-DB74DBA98AA7.jpg"></td>
+        <td>Seam loose LHS of the window</td>
+        <td>Maintenance required</td>
+        <td>Information only</td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 style="width: 95.4%; margin-left: 2px; height: auto;" class="room-header page-break">Reception Room</h1>
+  <table class="utilities-table">
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113687response-content-dispositioni.jfif" alt="32113687response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%"></div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/56_7CCC9EF7-BEC2-43CC-82B3-131DCEBED1D6.jpg" alt="56_7CCC9EF7-BEC2-43CC-82B3-131DCEBED1D6">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/57_2CC61DF1-737C-4609-A4C5-76C680D54A8A.jpg" alt="57_2CC61DF1-737C-4609-A4C5-76C680D54A8A">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/58_FD6C34DD-3E90-43AC-BA24-1A0B77989559.jpg" alt="58_FD6C34DD-3E90-43AC-BA24-1A0B77989559">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/59_923AFF46-D946-4581-9753-24F25CA75662.jpg" alt="59_923AFF46-D946-4581-9753-24F25CA75662">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="tabla-summary" class="table-item" style="margin-top:30px;">
+    <thead>
+      <tr>
+        <th style="width: 25px; text-align: center;" class="room-sub-header item-header">Item</th>
+        <th style="width: auto;" class="room-sub-header item-header">Description</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check In</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check Out</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: #EEE9E9;">
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">1.</td>
+        <td style="width: auto;">Summary of cleanliness</td>
+        <td style="width: auto;">Clean to a good domestic standard</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">2.</td>
+        <td style="width: auto;">Decorative Order</td>
+        <td style="width: auto;">Good decorative order</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">3.</td>
+        <td style="width: auto;">Carpets and Flooring</td>
+        <td style="width: auto;">New</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="dilap">
+    <thead>
+      <tr>
+        <th class="room-sub-header item-header">Item</th>
+        <th class="room-sub-header">Photograph</th>
+        <th class="room-sub-header">Condition</th>
+        <th class="room-sub-header">Action/Comments</th>
+        <th class="room-sub-header">Responsibility</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="5" style="background-color: darkgrey; color: black;" class="dilapidation-header">Cleanliness</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Fitted Units/Cupboards - White painted wooden frame<br>
+        White painted wood flush door, flush door above, white painted handle.<br>
+        White painted plaster walls, two wooden battens, blue fitted carpet</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/72_C4BF613E-F8FE-4A20-95E6-166724B2D867.jpg" alt="C4BF613E-F8FE-4A20-95E6-166724B2D867.jpg"><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/73_A990C8EF-2E05-4E9B-9C35-EC442C9D95CA.jpg" alt="A990C8EF-2E05-4E9B-9C35-EC442C9D95CA.jpg"></td>
+        <td>Mattress - bedding</td>
+        <td>Removal required - to be removed</td>
+        <td>Tenant</td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 style="width: 95.4%; margin-left: 2px; height: auto;" class="room-header page-break">Kitchen</h1>
+  <table class="utilities-table">
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113725response-content-dispositioni.jfif" alt="32113725response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%"></div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/74_E9D926DA-466C-4505-83F1-3D8B84E20E5F.jpg" alt="74_E9D926DA-466C-4505-83F1-3D8B84E20E5F">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/75_405E0797-0F54-49E2-A41C-45C9A975751F.jpg" alt="75_405E0797-0F54-49E2-A41C-45C9A975751F">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/76_2EBB64F0-1A47-4746-AB47-49CAB4E098B9.jpg" alt="76_2EBB64F0-1A47-4746-AB47-49CAB4E098B9">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/77_A984ACE6-E717-40B7-A981-70BA4B59E5F3.jpg" alt="77_A984ACE6-E717-40B7-A981-70BA4B59E5F3">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/78_8C109D43-1003-4637-9CC9-9E0DDDE243A0.jpg" alt="78_8C109D43-1003-4637-9CC9-9E0DDDE243A0">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="tabla-summary" class="table-item" style="margin-top:30px;">
+    <thead>
+      <tr>
+        <th style="width: 25px; text-align: center;" class="room-sub-header item-header">Item</th>
+        <th style="width: auto;" class="room-sub-header item-header">Description</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check In</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check Out</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: #EEE9E9;">
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">1.</td>
+        <td style="width: auto;">Summary of cleanliness</td>
+        <td style="width: auto;">Clean to a good domestic standard</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">2.</td>
+        <td style="width: auto;">Decorative Order</td>
+        <td style="width: auto;">Good decorative order</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">3.</td>
+        <td style="width: auto;">Carpets and Flooring</td>
+        <td style="width: auto;">New</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">4.</td>
+        <td style="width: auto;">Oven</td>
+        <td style="width: auto;">Good condition</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">5.</td>
+        <td style="width: auto;">Extractor Hood</td>
+        <td style="width: auto;">Good condition</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">6.</td>
+        <td style="width: auto;">Hob</td>
+        <td style="width: auto;">Good condition</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">7.</td>
+        <td style="width: auto;">Sink</td>
+        <td style="width: auto;">Good condition</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="dilap">
+    <thead>
+      <tr>
+        <th class="room-sub-header item-header">Item</th>
+        <th class="room-sub-header">Photograph</th>
+        <th class="room-sub-header">Condition</th>
+        <th class="room-sub-header">Action/Comments</th>
+        <th class="room-sub-header">Responsibility</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="5" style="background-color: darkgrey; color: black;" class="dilapidation-header">Cleanliness</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Floor - Fully fitted grey wood effect vinyl.<br>
+        Grey fitted carpet to the steps on entry.<br>
+        Metal threshold strip X 2</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/96_4CA038DE-5DCA-4753-A2C8-22D09D5F3062.jpg" alt="4CA038DE-5DCA-4753-A2C8-22D09D5F3062.jpg"></td>
+        <td>Not fully clean in the recess</td>
+        <td>Cleaning required</td>
+        <td>Tenant</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Oven - BEKO- Brushed stainless steel electric oven, glass door, brushed stainless steel handle, chrome wire rack, enamelled oven tray with wire rack. Two silver colour knobs, digital display</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/116_15831DCA-8537-4803-8490-A88974740020.jpg" alt="15831DCA-8537-4803-8490-A88974740020.jpg"><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/117_B872DDAC-075A-4504-800A-75B3B8BF1157.jpg" alt="B872DDAC-075A-4504-800A-75B3B8BF1157.jpg"><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/118_7E5C0763-2CB9-4B56-9875-6280AF04A71E.jpg" alt="7E5C0763-2CB9-4B56-9875-6280AF04A71E.jpg"><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/119_A16D34DC-1FA6-46AE-88F5-D2E735BFEB18.jpg" alt="A16D34DC-1FA6-46AE-88F5-D2E735BFEB18.jpg"><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/120_9AE6CF7E-DB6B-4B71-A2BF-286F3938C1FB.jpg" alt="9AE6CF7E-DB6B-4B71-A2BF-286F3938C1FB.jpg"></td>
+        <td>Not clean</td>
+        <td>Cleaning required</td>
+        <td>Tenant</td>
+      </tr>
+      <tr>
+        <td colspan="5" style="background-color: darkgrey; color: black;" class="dilapidation-header">Maintenance</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Walls - Grey painted tiles</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/83_588540FE-A3DA-49B4-AF32-13AC542B6646.jpg" alt="588540FE-A3DA-49B4-AF32-13AC542B6646.jpg"></td>
+        <td>Flaking paint</td>
+        <td>Maintenance required</td>
+        <td>Landlord</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Fixed Lighting - White plastic ceiling baynott bulb</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/101_2EC0192E-F659-45E8-9DF3-758ED6D9B311.jpg" alt="2EC0192E-F659-45E8-9DF3-758ED6D9B311.jpg"></td>
+        <td>Bulb missing</td>
+        <td>Replacement required</td>
+        <td>Tenant</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Extractor - Brushed stainless steel/grey extractor, one filter, one light, glass cover, black control</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/122_57EAA104-2B14-4DD5-B59D-1825559E7F84.jpg" alt="57EAA104-2B14-4DD5-B59D-1825559E7F84.jpg"><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/123_7C0F24E1-5A5C-41FD-9783-4859C4871149.jpg" alt="7C0F24E1-5A5C-41FD-9783-4859C4871149.jpg"><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/124_6B403FDE-DB31-4F9B-8F39-4BFD13224160.jpg" alt="6B403FDE-DB31-4F9B-8F39-4BFD13224160.jpg"></td>
+        <td>Not working</td>
+        <td>Maintenance required</td>
+        <td>Landlord</td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 style="width: 95.4%; margin-left: 2px; height: auto;" class="room-header page-break">Bathroom</h1>
+  <table class="utilities-table">
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113802response-content-dispositioni.jfif" alt="32113802response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%"></div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/125_378953D2-88C3-4A09-BEC1-55089A4FBD4C.jpg" alt="125_378953D2-88C3-4A09-BEC1-55089A4FBD4C">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/126_17CC7C84-23A1-44F1-9F1A-32ED9B07B97E.jpg" alt="126_17CC7C84-23A1-44F1-9F1A-32ED9B07B97E">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/127_6ABC23D7-56EF-4C1A-9A18-43D90E1CC8CD.jpg" alt="127_6ABC23D7-56EF-4C1A-9A18-43D90E1CC8CD">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/128_BB55AB05-E602-4FD0-B20A-BFD873B06B22.jpg" alt="128_BB55AB05-E602-4FD0-B20A-BFD873B06B22">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/129_2D74DC76-DFB0-431C-AB5E-B095C463896C.jpg" alt="129_2D74DC76-DFB0-431C-AB5E-B095C463896C">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/130_1DEB734E-2914-415E-A1AD-07FA60B9C881.jpg" alt="130_1DEB734E-2914-415E-A1AD-07FA60B9C881">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/131_7CF3B608-CE44-4E35-81B3-91ECB31ED8B3.jpg" alt="131_7CF3B608-CE44-4E35-81B3-91ECB31ED8B3">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="tabla-summary" class="table-item" style="margin-top:30px;">
+    <thead>
+      <tr>
+        <th style="width: 25px; text-align: center;" class="room-sub-header item-header">Item</th>
+        <th style="width: auto;" class="room-sub-header item-header">Description</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check In</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check Out</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: #EEE9E9;">
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">1.</td>
+        <td style="width: auto;">Summary of cleanliness</td>
+        <td style="width: auto;">Clean toa good domestic standard</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">2.</td>
+        <td style="width: auto;">Decorative Order</td>
+        <td style="width: auto;">Good decorative order</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">3.</td>
+        <td style="width: auto;">Carpets and Flooring</td>
+        <td style="width: auto;">New</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">4.</td>
+        <td style="width: auto;">Hand Basin(s)</td>
+        <td style="width: auto;">Good condition</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">5.</td>
+        <td style="width: auto;">Toilet</td>
+        <td style="width: auto;">Good condition</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">6.</td>
+        <td style="width: auto;">Shower (Bath Attachment)</td>
+        <td style="width: auto;">Good condition</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">7.</td>
+        <td style="width: auto;">Shower Screen</td>
+        <td style="width: auto;">Good condition</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">8.</td>
+        <td style="width: auto;">Extractor Fan</td>
+        <td style="width: auto;">Good condition</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">9.</td>
+        <td style="width: auto;">Bath</td>
+        <td style="width: auto;">Good condition</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 style="width: 95.4%; margin-left: 2px; height: auto;" class="room-header page-break">Bedroom 2</h1>
+  <table class="utilities-table">
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113866response-content-dispositioni.jfif" alt="32113866response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%"></div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/39_14431680-0E22-48F4-BD49-502D1F975931.jpg" alt="39_14431680-0E22-48F4-BD49-502D1F975931">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/40_D2CFF085-5313-40AF-B6C7-76204FA5AA6D.jpg" alt="40_D2CFF085-5313-40AF-B6C7-76204FA5AA6D">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/41_F64F10B0-5E23-4D76-854B-2C629A96CB51.jpg" alt="41_F64F10B0-5E23-4D76-854B-2C629A96CB51">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/42_691F9D5D-EDCF-491C-AB45-5CC4E5E45DCB.jpg" alt="42_691F9D5D-EDCF-491C-AB45-5CC4E5E45DCB">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="tabla-summary" class="table-item" style="margin-top:30px;">
+    <thead>
+      <tr>
+        <th style="width: 25px; text-align: center;" class="room-sub-header item-header">Item</th>
+        <th style="width: auto;" class="room-sub-header item-header">Description</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check In</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check Out</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: #EEE9E9;">
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">1.</td>
+        <td style="width: auto;">Summary of cleanliness</td>
+        <td style="width: auto;">Clean to a good domestic standard</td>
+        <td style="width: auto; background-color: #EEE9E9;">Good domestic clean standard</td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">2.</td>
+        <td style="width: auto;">Decorative Order</td>
+        <td style="width: auto;">Good decorative order</td>
+        <td style="width: auto; background-color: #EEE9E9;">Good Condition</td>
+      </tr>
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">3.</td>
+        <td style="width: auto;">Carpets and Flooring</td>
+        <td style="width: auto;">New</td>
+        <td style="width: auto; background-color: #EEE9E9;">Good Condition</td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="dilap">
+    <thead>
+      <tr>
+        <th class="room-sub-header item-header">Item</th>
+        <th class="room-sub-header">Photograph</th>
+        <th class="room-sub-header">Condition</th>
+        <th class="room-sub-header">Action/Comments</th>
+        <th class="room-sub-header">Responsibility</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="5" style="background-color: darkgrey; color: black;" class="dilapidation-header">Other</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Window 1 -</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/51_BB52C591-99B0-4F22-B9A9-7FAF7F30B698.jpg" alt="BB52C591-99B0-4F22-B9A9-7FAF7F30B698.jpg"></td>
+        <td>Decorative curtain left in place</td>
+        <td>Not consistent with inventory</td>
+        <td>Tenant</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Fixed Lighting - White plastic ceiling pendant</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/50_997EC814-E2B4-4E78-8CA4-BD796D71291A.jpg" alt="997EC814-E2B4-4E78-8CA4-BD796D71291A.jpg"></td>
+        <td>Chandelier light shade left in place</td>
+        <td>Not consistent with inventory</td>
+        <td>Tenant</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Sockets/Switches/Fans/Cables - White plastic light switch<br>
+        White plastic power socket<br>
+        White plastic telephone socket</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/55_510B551A-9427-4214-A97A-711776B59081.jpg" alt="510B551A-9427-4214-A97A-711776B59081.jpg"></td>
+        <td>Media hub - Virgin added</td>
+        <td>Not consistent with inventory</td>
+        <td>Tenant</td>
+      </tr>
+    </tbody>
+  </table>
+  <h1 style="width: 95.4%; margin-left: 2px; height: auto;" class="room-header page-break">Rear Garden</h1>
+  <table class="utilities-table">
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113890response-content-dispositioni.jfif" alt="32113890response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%"></div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/162_DCA909FD-E253-4B31-972F-C186C10047EE.jpg" alt="162_DCA909FD-E253-4B31-972F-C186C10047EE">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Rear Garden</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/163_55E7170D-6A46-4F5D-B976-A6CF37B512C9.jpg" alt="163_55E7170D-6A46-4F5D-B976-A6CF37B512C9">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Rear Garden</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/164_864E27DA-3344-4C6C-881F-DB877BDEC592.jpg" alt="164_864E27DA-3344-4C6C-881F-DB877BDEC592">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Rear Garden</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/165_006EA962-8EE4-4FC6-BACD-6E02305219EF.jpg" alt="165_006EA962-8EE4-4FC6-BACD-6E02305219EF">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Rear Garden</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="tabla-summary" class="table-item" style="margin-top:30px;">
+    <thead>
+      <tr>
+        <th style="width: 25px; text-align: center;" class="room-sub-header item-header">Item</th>
+        <th style="width: auto;" class="room-sub-header item-header">Description</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check In</th>
+        <th style="width: auto;" class="room-sub-header item-header">Condition at Check Out</th>
+      </tr>
+    </thead>
+    <tbody style="background-color: #EEE9E9;">
+      <tr style="overflow-wrap: break-word;">
+        <td style="width: 25px; text-align: center; background-color: #EEE9E9;">1.</td>
+        <td style="width: auto;">Comments</td>
+        <td style="width: auto;">Neat and tidy, seasonal weeds</td>
+        <td style="width: auto; background-color: #EEE9E9;"></td>
+      </tr>
+    </tbody>
+  </table>
+  <table id="dilap">
+    <thead>
+      <tr>
+        <th class="room-sub-header item-header">Item</th>
+        <th class="room-sub-header">Photograph</th>
+        <th class="room-sub-header">Condition</th>
+        <th class="room-sub-header">Action/Comments</th>
+        <th class="room-sub-header">Responsibility</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="5" style="background-color: darkgrey; color: black;" class="dilapidation-header">Other</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Front / Garden / Path -</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/172_BFBB12E0-FA9E-4005-B5D1-69A28FD49E60.jpg" alt="BFBB12E0-FA9E-4005-B5D1-69A28FD49E60.jpg"></td>
+        <td>Small grey table and chairs left</td>
+        <td>Not consistent with inventory</td>
+        <td>Tenant</td>
+      </tr>
+      <tr>
+        <td colspan="5" style="background-color: darkgrey; color: black;" class="dilapidation-header">Cleanliness</td>
+      </tr>
+      <tr>
+        <td style="background-color: #EEE9E9;">Front / Garden / Path - Green waste bin</td>
+        <td><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/170_B140F146-91E5-49BF-B259-5EE3871D097C.jpg" alt="B140F146-91E5-49BF-B259-5EE3871D097C.jpg"><img class="dilapidation-photo" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/171_9D7AC34B-A98A-4A9D-9AD0-3A66F3098B4F.jpg" alt="9D7AC34B-A98A-4A9D-9AD0-3A66F3098B4F.jpg"></td>
+        <td>Bins full</td>
+        <td>Cleaning required</td>
+        <td>Information only</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="page-break"></div>
+  <h1 style="height: 1.5rem; text-align: center; padding-top: 5px; padding-bottom: 0px; font-size: 18px;" class="room-item-header">Additional Items</h1>
+  <table class="utilities-table">
+    <tbody>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/176_677BC18A-BED4-4F15-999E-E8CA33C599A5.jpg" alt="176_677BC18A-BED4-4F15-999E-E8CA33C599A5">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Garden Front-Front / Garden / Path</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/177_A6C06CD6-BF67-48BE-8E27-9CCB536292E6.jpg" alt="177_A6C06CD6-BF67-48BE-8E27-9CCB536292E6">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Garden Front-Front / Garden / Path</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/178_E613C2A9-6218-4C0E-82D7-C9EF5DB00C6D.jpg" alt="178_E613C2A9-6218-4C0E-82D7-C9EF5DB00C6D">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Garden Front-Front / Garden / Path</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/179_43E0A39E-B4BA-450E-9B7A-934F2655F2A3.jpg" alt="179_43E0A39E-B4BA-450E-9B7A-934F2655F2A3">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Garden Front-Front / Garden / Path</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113650response-content-dispositioni.jfif" alt="32113650response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/4_D9E4E141-2DC5-4406-8877-919C76DAD8BD.jpg" alt="4_D9E4E141-2DC5-4406-8877-919C76DAD8BD">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Door</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/5_B163A960-5956-4054-A442-450954FD0244.jpg" alt="5_B163A960-5956-4054-A442-450954FD0244">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Door</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/6_7900C4DB-6CBB-43F6-9CE9-A29328B6E81A.jpg" alt="6_7900C4DB-6CBB-43F6-9CE9-A29328B6E81A">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Door</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113653response-content-dispositioni.jfif" alt="32113653response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113654response-content-dispositioni.jfif" alt="32113654response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/7_57E92A5B-DCE7-4DF1-953C-F12084792716.jpg" alt="7_57E92A5B-DCE7-4DF1-953C-F12084792716">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Walls</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/8_F29356C3-1350-408A-9DDF-3CF6EE19E906.jpg" alt="8_F29356C3-1350-408A-9DDF-3CF6EE19E906">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Walls</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113659response-content-dispositioni.jfif" alt="32113659response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/9_6C27AFAE-3E4D-419F-8C20-C44F7BE34198.jpg" alt="9_6C27AFAE-3E4D-419F-8C20-C44F7BE34198">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/10_44F017C4-1076-4515-A1A4-B6073AF19755.jpg" alt="10_44F017C4-1076-4515-A1A4-B6073AF19755">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/11_CCCBFD32-5EF3-4AFF-8EA8-55CE16182324.jpg" alt="11_CCCBFD32-5EF3-4AFF-8EA8-55CE16182324">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113661response-content-dispositioni.jfif" alt="32113661response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/12_26F5C003-2C8B-4D3B-B30A-808C5A6EC37D.jpg" alt="12_26F5C003-2C8B-4D3B-B30A-808C5A6EC37D">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Heating/Air Conditioning</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113662response-content-dispositioni.jfif" alt="32113662response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/13_73EF2D37-6DEC-40B5-832A-3CFFEB8A92CD.jpg" alt="13_73EF2D37-6DEC-40B5-832A-3CFFEB8A92CD">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Fixed Lighting</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/14_4AE07589-04D2-496C-81C9-832E25151768.jpg" alt="14_4AE07589-04D2-496C-81C9-832E25151768">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Entrance-Fixed Lighting</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113667response-content-dispositioni.jfif" alt="32113667response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/19_8A802D40-F2C8-4CED-B518-D6198D35BC69.jpg" alt="19_8A802D40-F2C8-4CED-B518-D6198D35BC69">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Door</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113671response-content-dispositioni.jfif" alt="32113671response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/20_CF773067-214C-4957-AFC1-222FB6C88207.jpg" alt="20_CF773067-214C-4957-AFC1-222FB6C88207">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Walls</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/21_8241B09B-9723-4823-B8DA-B24734B4FF3F.jpg" alt="21_8241B09B-9723-4823-B8DA-B24734B4FF3F">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Walls</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113673response-content-dispositioni.jfif" alt="32113673response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/23_1537E717-4BA5-4C94-BC1A-62D300679B8B.jpg" alt="23_1537E717-4BA5-4C94-BC1A-62D300679B8B">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/24_8E99C912-4D1B-4053-9502-33079FE605CD.jpg" alt="24_8E99C912-4D1B-4053-9502-33079FE605CD">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/25_201413AC-1AE7-4769-B0D2-A741EF414674.jpg" alt="25_201413AC-1AE7-4769-B0D2-A741EF414674">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113675response-content-dispositioni.jfif" alt="32113675response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/28_61611EFE-D94A-483D-9208-7F055B19D7A8.jpg" alt="28_61611EFE-D94A-483D-9208-7F055B19D7A8">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/29_7FAD2935-5363-421F-909D-09DA4580BEFB.jpg" alt="29_7FAD2935-5363-421F-909D-09DA4580BEFB">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/30_ECEF570F-ACFB-4280-B1BD-54D0AF04261C.jpg" alt="30_ECEF570F-ACFB-4280-B1BD-54D0AF04261C">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113678response-content-dispositioni.jfif" alt="32113678response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/31_11F40D59-3B64-4D72-AB2C-70CF4BE1F182.jpg" alt="31_11F40D59-3B64-4D72-AB2C-70CF4BE1F182">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Heating/Air Conditioning</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113681response-content-dispositioni.jfif" alt="32113681response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/33_BE4DB447-7861-4B71-93FA-DE3B4B039864.jpg" alt="33_BE4DB447-7861-4B71-93FA-DE3B4B039864">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Fixed Lighting</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113682response-content-dispositioni.jfif" alt="32113682response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/34_7F1177CF-3EBC-4ADF-8758-960A5E60BF39.jpg" alt="34_7F1177CF-3EBC-4ADF-8758-960A5E60BF39">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Fitted Units/Cupboards</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/35_37B560F2-AE30-4717-B5A7-1FFB47B4A212.jpg" alt="35_37B560F2-AE30-4717-B5A7-1FFB47B4A212">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 1-Fitted Units/Cupboards</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113695response-content-dispositioni.jfif" alt="32113695response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/60_F27FD49D-C8F0-44B4-8DF8-FA9A84E5061E.jpg" alt="60_F27FD49D-C8F0-44B4-8DF8-FA9A84E5061E">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Door</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113697response-content-dispositioni.jfif" alt="32113697response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/61_8DA292CE-98C4-4B95-9206-79D3FC344EAF.jpg" alt="61_8DA292CE-98C4-4B95-9206-79D3FC344EAF">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Ceiling</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113701response-content-dispositioni.jfif" alt="32113701response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/62_1909368D-9AFB-4B9D-A708-FE1CF7914EF6.jpg" alt="62_1909368D-9AFB-4B9D-A708-FE1CF7914EF6">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Walls</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/63_33BF7460-1525-4B43-ADAD-9A01F82A9D00.jpg" alt="63_33BF7460-1525-4B43-ADAD-9A01F82A9D00">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Walls</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113703response-content-dispositioni.jfif" alt="32113703response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/64_70C3A462-AACC-435B-B2BB-08F46AEDE6D8.jpg" alt="64_70C3A462-AACC-435B-B2BB-08F46AEDE6D8">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/65_7E4B2034-D016-444E-AA65-D62B600859B9.jpg" alt="65_7E4B2034-D016-444E-AA65-D62B600859B9">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/66_7E6C6520-46EE-498A-9730-CB5CF4556973.jpg" alt="66_7E6C6520-46EE-498A-9730-CB5CF4556973">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113706response-content-dispositioni.jfif" alt="32113706response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/67_C64C7AA7-7492-4F05-9A27-7F5B631CDB81.jpg" alt="67_C64C7AA7-7492-4F05-9A27-7F5B631CDB81">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/68_A64DBB91-51C8-4496-B811-28499A7C3C7F.jpg" alt="68_A64DBB91-51C8-4496-B811-28499A7C3C7F">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/69_C9AC7F09-5017-4F86-BF49-F94210B0182C.jpg" alt="69_C9AC7F09-5017-4F86-BF49-F94210B0182C">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113711response-content-dispositioni.jfif" alt="32113711response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/70_49EDA5D9-D8F0-49B6-A6E9-14F02DC68751.jpg" alt="70_49EDA5D9-D8F0-49B6-A6E9-14F02DC68751">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Heating/Air Conditioning</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113713response-content-dispositioni.jfif" alt="32113713response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/71_7573134A-22F3-4A9E-8565-5D49BD33EC15.jpg" alt="71_7573134A-22F3-4A9E-8565-5D49BD33EC15">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Reception Room-Fixed Lighting</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113715response-content-dispositioni.jfif" alt="32113715response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113734response-content-dispositioni.jfif" alt="32113734response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/79_B8D1310E-790D-4C63-9623-F14C72522D6B.jpg" alt="79_B8D1310E-790D-4C63-9623-F14C72522D6B">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Door</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113739response-content-dispositioni.jfif" alt="32113739response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/80_09F1A34A-B83B-4EBA-85A2-CA2F316931A4.jpg" alt="80_09F1A34A-B83B-4EBA-85A2-CA2F316931A4">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Rear Door</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113743response-content-dispositioni.jfif" alt="32113743response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/81_6EB2FA4C-879F-4A53-BD17-4EFA179895A0.jpg" alt="81_6EB2FA4C-879F-4A53-BD17-4EFA179895A0">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Ceiling</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113745response-content-dispositioni.jfif" alt="32113745response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/82_E7CE0B94-190B-4825-9CE4-AD9099B6C65E.jpg" alt="82_E7CE0B94-190B-4825-9CE4-AD9099B6C65E">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Walls</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113749response-content-dispositioni.jfif" alt="32113749response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/84_4CC99A27-787E-4BAE-9B30-497D07181DEE.jpg" alt="84_4CC99A27-787E-4BAE-9B30-497D07181DEE">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/85_4A50F766-D089-4814-A6F9-907F77AE53D1.jpg" alt="85_4A50F766-D089-4814-A6F9-907F77AE53D1">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/86_1F75564F-15E0-4087-8BDF-8B9540317582.jpg" alt="86_1F75564F-15E0-4087-8BDF-8B9540317582">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/87_EC91CCB8-9294-4955-B3A1-78BB4E52C606.jpg" alt="87_EC91CCB8-9294-4955-B3A1-78BB4E52C606">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/88_65F2EC27-7CDB-4E66-BA44-BCE67D0616E0.jpg" alt="88_65F2EC27-7CDB-4E66-BA44-BCE67D0616E0">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/89_7E751998-CB85-4FB2-B4FF-6FD206450560.jpg" alt="89_7E751998-CB85-4FB2-B4FF-6FD206450560">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/90_E5407AFC-510F-42E2-A0E7-389AAAC5EDE4.jpg" alt="90_E5407AFC-510F-42E2-A0E7-389AAAC5EDE4">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/91_6E384367-834B-4FA9-A291-DC4ECD11285B.jpg" alt="91_6E384367-834B-4FA9-A291-DC4ECD11285B">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/92_B278529E-5F99-47B1-BAE8-A207A39BF95E.jpg" alt="92_B278529E-5F99-47B1-BAE8-A207A39BF95E">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/93_AC0F62D5-B582-4D8C-90EB-7E526AAA6CD6.jpg" alt="93_AC0F62D5-B582-4D8C-90EB-7E526AAA6CD6">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/94_6E9508DA-C6EC-47E4-A00A-3843491F76DD.jpg" alt="94_6E9508DA-C6EC-47E4-A00A-3843491F76DD">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/95_6D9E7373-A40E-4D1B-B682-C948062F7F8B.jpg" alt="95_6D9E7373-A40E-4D1B-B682-C948062F7F8B">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113753response-content-dispositioni.jfif" alt="32113753response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/97_58174CDB-C30F-4B41-90D0-07C966C23A92.jpg" alt="97_58174CDB-C30F-4B41-90D0-07C966C23A92">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/98_076D1BE3-77A5-4006-9E50-15390D7EAD3A.jpg" alt="98_076D1BE3-77A5-4006-9E50-15390D7EAD3A">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113756response-content-dispositioni.jfif" alt="32113756response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113758response-content-dispositioni.jfif" alt="32113758response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/99_0566C496-4436-47A2-BC78-BE6230052BCB.jpg" alt="99_0566C496-4436-47A2-BC78-BE6230052BCB">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Heating/Air Conditioning</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113760response-content-dispositioni.jfif" alt="32113760response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/100_219D3ADB-488A-49A9-933F-D00DFC5090B6.jpg" alt="100_219D3ADB-488A-49A9-933F-D00DFC5090B6">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Fixed Lighting</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113762response-content-dispositioni.jfif" alt="32113762response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/102_D7C17542-A3A5-4C14-87B7-13D098CD402E.jpg" alt="102_D7C17542-A3A5-4C14-87B7-13D098CD402E">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Fitted Units/Cupboards</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/103_6A56C1E4-4ED5-42A0-BF02-E5A4980DC150.jpg" alt="103_6A56C1E4-4ED5-42A0-BF02-E5A4980DC150">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Fitted Units/Cupboards</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/104_F9C785B7-D259-43E4-B9DB-E50808D928DD.jpg" alt="104_F9C785B7-D259-43E4-B9DB-E50808D928DD">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Fitted Units/Cupboards</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/105_420D50F1-15FB-4300-AE0E-A8A010001483.jpg" alt="105_420D50F1-15FB-4300-AE0E-A8A010001483">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Fitted Units/Cupboards</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/106_BFE8AAED-F4A1-43B0-9469-415CC61628C0.jpg" alt="106_BFE8AAED-F4A1-43B0-9469-415CC61628C0">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Fitted Units/Cupboards</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/107_D0B952EA-8C89-41EF-AE37-724D96F2E367.jpg" alt="107_D0B952EA-8C89-41EF-AE37-724D96F2E367">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Fitted Units/Cupboards</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113775response-content-dispositioni.jfif" alt="32113775response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/108_09FB4220-C5F9-48BF-B5DC-760510B3CCCD.jpg" alt="108_09FB4220-C5F9-48BF-B5DC-760510B3CCCD">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Work surface</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/109_75EB3558-5D1A-4E64-BE9F-BF042B1F0E13.jpg" alt="109_75EB3558-5D1A-4E64-BE9F-BF042B1F0E13">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Work surface</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/110_689C40B2-227C-4550-AAF5-E328AFFC81F6.jpg" alt="110_689C40B2-227C-4550-AAF5-E328AFFC81F6">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Work surface</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113781response-content-dispositioni.jfif" alt="32113781response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/111_0A64DCCA-ACD2-419D-9931-A709451E21D8.jpg" alt="111_0A64DCCA-ACD2-419D-9931-A709451E21D8">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Sink</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/112_CA6F9015-D6F0-4DE2-987C-427B6F96E23A.jpg" alt="112_CA6F9015-D6F0-4DE2-987C-427B6F96E23A">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Sink</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113787response-content-dispositioni.jfif" alt="32113787response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/113_CE4B95D6-56DD-41E7-86AB-B3AE99F88058.jpg" alt="113_CE4B95D6-56DD-41E7-86AB-B3AE99F88058">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Appliances</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/114_A00410F9-C702-449D-A26C-61D788227E14.jpg" alt="114_A00410F9-C702-449D-A26C-61D788227E14">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Appliances</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/115_98A7158B-BFAC-4EEF-AB50-15A86F16D748.jpg" alt="115_98A7158B-BFAC-4EEF-AB50-15A86F16D748">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Appliances</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/121_33F1923C-AF1D-424E-BD55-E74CE2E57C02.jpg" alt="121_33F1923C-AF1D-424E-BD55-E74CE2E57C02">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Kitchen-Appliances</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113811response-content-dispositioni.jfif" alt="32113811response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/132_8CD1891C-BFCD-48CF-B5BC-2B9080E04FBF.jpg" alt="132_8CD1891C-BFCD-48CF-B5BC-2B9080E04FBF">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Door</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113817response-content-dispositioni.jfif" alt="32113817response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/133_3C9876BD-6332-4870-A907-B98F228D6BE1.jpg" alt="133_3C9876BD-6332-4870-A907-B98F228D6BE1">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Ceiling</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/134_7EC53ABD-457F-48FE-8DC6-C0939906E36B.jpg" alt="134_7EC53ABD-457F-48FE-8DC6-C0939906E36B">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Walls</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/135_450A6069-85F1-466C-A690-D90CD72CA36C.jpg" alt="135_450A6069-85F1-466C-A690-D90CD72CA36C">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Walls</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/136_380E83E8-F38D-499F-9243-FAFEB4BC3732.jpg" alt="136_380E83E8-F38D-499F-9243-FAFEB4BC3732">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Walls</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/137_FCE0CC4F-8D28-4128-8C4F-C9FBF63AED70.jpg" alt="137_FCE0CC4F-8D28-4128-8C4F-C9FBF63AED70">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Walls</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113819response-content-dispositioni.jfif" alt="32113819response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/138_77C1052A-3F5D-4390-8556-2977E7943146.jpg" alt="138_77C1052A-3F5D-4390-8556-2977E7943146">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/139_77EB602F-C003-4EC3-BF26-75E28176EE62.jpg" alt="139_77EB602F-C003-4EC3-BF26-75E28176EE62">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113821response-content-dispositioni.jfif" alt="32113821response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/140_05E23864-99F4-4196-9A4A-01BBA22DD891.jpg" alt="140_05E23864-99F4-4196-9A4A-01BBA22DD891">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/141_A0C08925-5E1D-4807-92F7-07FBFBEB4226.jpg" alt="141_A0C08925-5E1D-4807-92F7-07FBFBEB4226">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113831response-content-dispositioni.jfif" alt="32113831response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/142_BC640AB0-A965-46E4-B65C-E1DCA0A52AAE.jpg" alt="142_BC640AB0-A965-46E4-B65C-E1DCA0A52AAE">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Heating/Air Conditioning</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/143_0B504A4D-CC32-4BF8-AF5A-8F9A2B399CA0.jpg" alt="143_0B504A4D-CC32-4BF8-AF5A-8F9A2B399CA0">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Heating/Air Conditioning</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113834response-content-dispositioni.jfif" alt="32113834response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/144_F37089B5-4A53-48E4-A444-3D2BBF2CDD40.jpg" alt="144_F37089B5-4A53-48E4-A444-3D2BBF2CDD40">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Extractor Fan</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/145_C462FBAB-8BA7-47A8-92B2-6CC1D592BDAF.jpg" alt="145_C462FBAB-8BA7-47A8-92B2-6CC1D592BDAF">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Extractor Fan</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113836response-content-dispositioni.jfif" alt="32113836response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/146_D19118C3-0E98-4546-9678-5C13CF5F288A.jpg" alt="146_D19118C3-0E98-4546-9678-5C13CF5F288A">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Fixed Lighting</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/147_79EE25EC-12FF-4F92-B973-96B38B32EFF9.jpg" alt="147_79EE25EC-12FF-4F92-B973-96B38B32EFF9">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Misc.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113838response-content-dispositioni.jfif" alt="32113838response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/148_DAA5B83C-D0AA-4468-865D-0923B03FE74B.jpg" alt="148_DAA5B83C-D0AA-4468-865D-0923B03FE74B">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Sockets/Switches/Fans/Cables</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113842response-content-dispositioni.jfif" alt="32113842response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/149_A5C27A6C-EBC4-445D-B9F3-03263801B3E3.jpg" alt="149_A5C27A6C-EBC4-445D-B9F3-03263801B3E3">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Toilet</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/150_3AE71C23-4AF9-4CD1-A40B-898CFEFBEEAF.jpg" alt="150_3AE71C23-4AF9-4CD1-A40B-898CFEFBEEAF">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Toilet</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/151_6B061F1F-7BDD-4F52-AE6F-6E44C5BF65DE.jpg" alt="151_6B061F1F-7BDD-4F52-AE6F-6E44C5BF65DE">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Toilet</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113848response-content-dispositioni.jfif" alt="32113848response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/152_02C633CD-8959-4B56-85DB-DDAF1E69DA40.jpg" alt="152_02C633CD-8959-4B56-85DB-DDAF1E69DA40">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Hand Basin(s)</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/153_3CCD69FF-B314-458C-83A9-C8AFBC51BF9E.jpg" alt="153_3CCD69FF-B314-458C-83A9-C8AFBC51BF9E">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Hand Basin(s)</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/154_FDF01D1B-67D8-4B1E-8143-0598A6B05445.jpg" alt="154_FDF01D1B-67D8-4B1E-8143-0598A6B05445">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Hand Basin(s)</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/155_56C8558C-C406-4F00-9503-CEC0E67F6A50.jpg" alt="155_56C8558C-C406-4F00-9503-CEC0E67F6A50">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Hand Basin(s)</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113862response-content-dispositioni.jfif" alt="32113862response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/156_5863A4AB-456E-4A50-B1CB-A97F5B2FA524.jpg" alt="156_5863A4AB-456E-4A50-B1CB-A97F5B2FA524">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Bath</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/157_60859D72-8CAB-4D4D-865B-42FD6DDC0DAF.jpg" alt="157_60859D72-8CAB-4D4D-865B-42FD6DDC0DAF">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Bath</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/158_BBF7B113-6208-4565-B625-296E6C871E62.jpg" alt="158_BBF7B113-6208-4565-B625-296E6C871E62">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Bath</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/159_59FC3603-2E90-47AA-AFCA-391F3F503EA8.jpg" alt="159_59FC3603-2E90-47AA-AFCA-391F3F503EA8">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Bath</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/160_6193A87C-85B0-4074-80F2-6FCF0C04619B.jpg" alt="160_6193A87C-85B0-4074-80F2-6FCF0C04619B">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Bath</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/161_1DC7C9A5-BFA9-4379-A362-A22E174AA681.jpg" alt="161_1DC7C9A5-BFA9-4379-A362-A22E174AA681">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bathroom-Bath</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113874response-content-dispositioni.jfif" alt="32113874response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/43_FC719A32-EC8C-45AF-A260-358D6703B0D4.jpg" alt="43_FC719A32-EC8C-45AF-A260-358D6703B0D4">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2-Door</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/44_547552DB-347A-4629-A3E9-A82EB6D3B81A.jpg" alt="44_547552DB-347A-4629-A3E9-A82EB6D3B81A">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2-Door</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113878response-content-dispositioni.jfif" alt="32113878response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/45_F9C8F4D7-3AEE-4128-96CF-81B8CF3F3D24.jpg" alt="45_F9C8F4D7-3AEE-4128-96CF-81B8CF3F3D24">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/46_1F45F6EC-AB53-48ED-88C9-506379705671.jpg" alt="46_1F45F6EC-AB53-48ED-88C9-506379705671">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2-Floor</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/47_CB5C45C2-38C2-4B40-90FA-33F28275A960.jpg" alt="47_CB5C45C2-38C2-4B40-90FA-33F28275A960">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2-Floor</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113882response-content-dispositioni.jfif" alt="32113882response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/52_5AA49A59-C017-429C-8A74-B45762DFE43C.jpg" alt="52_5AA49A59-C017-429C-8A74-B45762DFE43C">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/53_82EBFB03-DBC8-4899-8B52-03B3C79966AB.jpg" alt="53_82EBFB03-DBC8-4899-8B52-03B3C79966AB">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/54_0550A7F8-3C65-4E15-957B-2A5DFDE89DF2.jpg" alt="54_0550A7F8-3C65-4E15-957B-2A5DFDE89DF2">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2-Windows and Sills</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113886response-content-dispositioni.jfif" alt="32113886response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/48_A52239EF-239D-4BED-A134-9554AE912F73.jpg" alt="48_A52239EF-239D-4BED-A134-9554AE912F73">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2-Heating/Air Conditioning</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113888response-content-dispositioni.jfif" alt="32113888response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="landscape-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/49_DC2DA2FB-2B1C-494E-8CF5-4559DE373D90.jpg" alt="49_DC2DA2FB-2B1C-494E-8CF5-4559DE373D90">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Bedroom 2-Fixed Lighting</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/media-gallery/media/32113899response-content-dispositioni.jfif" alt="32113899response-content-dispositioni">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">.</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/166_74EF7ACD-E513-4F8F-9C60-2C965076D682.jpg" alt="166_74EF7ACD-E513-4F8F-9C60-2C965076D682">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Rear Garden-Front / Garden / Path</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/167_EDB50602-E80D-44D3-AFBD-C2665E904084.jpg" alt="167_EDB50602-E80D-44D3-AFBD-C2665E904084">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Rear Garden-Front / Garden / Path</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/168_9178D7F4-F1F1-4C33-98C9-79DD05173113.jpg" alt="168_9178D7F4-F1F1-4C33-98C9-79DD05173113">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Rear Garden-Front / Garden / Path</span>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <img class="portrait-photo north" src="https://s3-admax-live.s3.amazonaws.com/media/job_86931/0c98ecbc-97ef-4409-9895-0a2fce638fb0/169_810FA75B-60E8-4441-B2F6-D92C867D8D30.jpg" alt="169_810FA75B-60E8-4441-B2F6-D92C867D8D30">
+            <div style="margin-left: 3%; width: 100%">
+              <span style="text-align: center">Rear Garden-Front / Garden / Path</span>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="page-break"></div>
+  <div class="bottom-left">
+    78 Westbourne Avenue 07-08-2024
+  </div>
+  <div class="bottom-right"></div>
+  <hr>
+  <h2 style="font-size: 20pt;" class="title">Declaration: Check Out</h2>
+  <div class="box" style="font-size: 9pt; overflow-wrap: break-word;">
+    <p>We certify that this report is a fair description of the condition of the property and its contents, fixtures and fittings at the date of our visit. Where provided, reference has been made to the original inventory. We have made comments where applicable on issues of damage and fair wear and tear based on our experience in the lettings industry. However, any actions or repairs suggested in this report are subject to the terms of any prior agreement between the landlord and tenant and are also subject to the terms of the tenancy agreement itself.</p>
+  </div>
+  <table>
+    <tr>
+      <td style="background-color: white;" class="invisible signature-align">
+        <span>Signed (Tenants)</span>
+        <div class="signature-field"></div>
+      </td>
+      <td style="background-color: white;" class="invisible signature-align">
+        <span>Name<br></span>
+        <div class="signature-field"></div>
+      </td>
+      <td style="background-color: white;" class="invisible signature-align">
+        <span>Date<br></span>
+        <div class="signature-field"></div>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color: white;" class="invisible signature-align">
+        <span>Signed (Landlord/Agent/Clerk)</span>
+        <div class="signature-field"></div>
+      </td>
+      <td style="background-color: white;" class="invisible signature-align"><span>Name<br></span> Julie Skipp</td>
+      <td style="background-color: white;" class="invisible signature-align">
+        <span>Date<br></span>
+        <div class="signature-field"></div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
