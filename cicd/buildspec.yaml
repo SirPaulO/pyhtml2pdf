@@ -1,0 +1,12 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.11
+  build:
+    commands:
+      - sam build --template-file cicd/template.yaml --build-dir cicd/.aws-sam/build
+      - sam package --template-file cicd/.aws-sam/build/template.yaml --s3-bucket ${S3BucketName} --output-template-file out-${ProjectName}-lambda.yaml
+artifacts:
+  files:
+    - out-${ProjectName}-lambda.yaml

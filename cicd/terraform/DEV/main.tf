@@ -7,9 +7,9 @@ terraform {
   }
   backend "s3" {
     bucket = "terraform-kaptur"
-    key = "imagecropper.tfstate"
+    key = "DEV-html2pdf.tfstate"
     region = "eu-west-2"
-    dynamodb_table = "Terraform-lock-kaptur"
+    dynamodb_table = "Terraform-lock-DEV-html2pdf"
   }
 }
 
@@ -18,14 +18,13 @@ provider "aws" {
   region = "eu-west-2"
 }
 
-module "codepipeline" {
-  source = "../modules/codepipeline"
+module "main" {
+  source = "../main"
   environment = var.environment
   project_name = var.project_name
   s3_bucket_cicd = var.s3_bucket_cicd
   bitbucket_location = var.bitbucket_location
-  codestart_connection = var.codestart_connection
+  codestar_connection = var.codestar_connection
   codepipeline_service_role_arn = var.codepipeline_service_role_arn
   codebuild_service_role_arn = var.codebuild_service_role_arn
 }
-

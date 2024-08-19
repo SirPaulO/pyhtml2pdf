@@ -1,0 +1,13 @@
+
+services:
+  lambda:
+    build:
+      context: src
+    volumes:
+      - ./tests/content:/var/task/content
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+      - DynamoDBTable=TestTable
+      - S3BucketName=TestBucket

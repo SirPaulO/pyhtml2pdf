@@ -19,7 +19,7 @@ resource "aws_codepipeline" "codepipeline" {
       output_artifacts = ["source_output"]
 
       configuration = {
-        ConnectionArn    = var.codestart_connection
+        ConnectionArn    = var.codestar_connection
         FullRepositoryId = var.bitbucket_location
         BranchName       = var.environment
       }
@@ -46,6 +46,11 @@ resource "aws_codepipeline" "codepipeline" {
               name: "S3BucketName"
               type: "PLAINTEXT"
               value: var.s3_bucket_cicd
+            },
+            {
+              name: "ProjectName"
+              type: "PLAINTEXT"
+              value: var.project_name
             }
           ]
         )
@@ -136,6 +141,7 @@ resource "aws_codebuild_project" "codebuild" {
 
   source {
     type = "CODEPIPELINE"
+    buildspec = "cicd/buildspec.yml"
   }
 
   tags = {

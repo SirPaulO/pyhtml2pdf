@@ -11,7 +11,7 @@ variable "environment" {
 variable "project_name" {
   type = string
   description = "Project Name"
-  default = "imagecropper"
+  default = "html2pdf"
 }
 
 variable "codepipeline_service_role_arn" {
@@ -32,14 +32,14 @@ variable "s3_bucket_cicd" {
   default = "dev-kaptur-cicd-tasks"
 }
 
-variable "codestart_connection" {
+variable "codestar_connection" {
   type = string
-  description = "arn of codestart connection."
+  description = "arn of codestar connection."
   default = "arn:aws:codestar-connections:eu-west-2:616962414855:connection/a977c8a7-a99e-4a11-a71a-68ab69583c6a"
 }
 
 variable "bitbucket_location" {
   type = string
   description = "Location of the repo in bitbucket."
-  default = "nlgo/imagecropperlambda"
+  default = "nlgo/html2pdflambda"
 }

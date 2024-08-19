@@ -1,0 +1,24 @@
+FROM amazonlinux:2
+
+COPY google-chrome.repo /etc/yum.repos.d/google-chrome.repo
+
+# Install dependencies.
+RUN yum update -y && yum install -y unzip xvfb libxi6 libgconf-2-4 wget install gcc bzip2-devel libffi-devel tar make openssl11 openssl11-devel
+
+# Enable and install Extra Packages for Enterprise Linux by running the command
+RUN amazon-linux-extras install epel -y
+
+# Post installing all the extra packages successfully, Install chromimum as usual
+RUN yum install -y chromium
+
+ENV CFLAGS="-I/usr/include/openssl11"
+ENV LDFLAGS="-L/usr/lib64/openssl11"
+
+RUN curl -O https://www.python.org/ftp/python/3.11.9/Python-3.11.9.tgz
+RUN tar -xzf Python-3.11.9.tgz
+RUN cd Python-3.11.9 && ./configure --enable-optimizations && make install
+
+COPY requirements.txt ./requirements.txt
+RUN python3 -m pip install -r requirements.txt -t .
+
+COPY . ./

@@ -4,3 +4,6 @@ docker run -it -p 9000:8080 html2pdflambda:html2pdf
 curl --location 'http://localhost:9000/2015-03-31/functions/function/invocations' \
 --header 'Content-Type: application/json' \
 --data '{"payload":"hello world!"}'
+
+docker run -it -p 9000:8080 --entrypoint /bin/bash htmltest3
+python3.11 -c "import app; app.lambda_handler(None, None)"

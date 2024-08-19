@@ -1,8 +1,0 @@
-
-services:
-  app:
-    build:
-      context: src
-    command: python app.py
-    volumes:
-      - ./src:/app

@@ -5,7 +5,6 @@ variable "environment" {
       condition = contains(["DEV", "STG", "PRD"], var.environment)
       error_message = "The environment must be one of DEV, STG, or PRD."
   }
-
 }
 
 variable "project_name" {
@@ -18,9 +17,9 @@ variable "s3_bucket_cicd" {
   description = "Bucket that will be used for CI/CD."
 }
 
-variable "codestart_connection" {
+variable "codestar_connection" {
   type = string
-  description = "arn of codestart connection."
+  description = "arn of codestar connection."
 }
 
 variable "bitbucket_location" {

@@ -1,5 +1,6 @@
 import json
 import os
+from typing import Any
 
 from html2pdf.converter import convert
 
@@ -8,9 +9,10 @@ class LambdaHandler
 
 - get_keys(event) -> list[dict[str, str]]
 - get_item(item_key) -> html, save_path
-- generate_pdf(html) -> file
-- save_file(file, save_path)
-- delete_item(item_key)
+- save_tmp_file(file) -> tmp_file_path
+- generate_pdf(tmp_file_path) -> file
+- save_file(file, save_path) -> None
+- delete_item(item_key) -> None
 - handle_event(event) -> None
 	- get_keys
 	- for each key
@@ -20,28 +22,16 @@ class LambdaHandler
 		- delete_item
 """
 
-def lambda_handler(event, context):
-    """Sample pure Lambda function
+def lambda_handler(event: dict, context: Any) -> dict:
+    """Lambda function handler
 
-    Parameters
-    ----------
-    event: dict, required
-        API Gateway Lambda Proxy Input Format
-
-        Event doc: https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html#api-gateway-simple-proxy-for-lambda-input-format
-
-    context: object, required
-        Lambda Context runtime methods and attributes
-
-        Context doc: https://docs.aws.amazon.com/lambda/latest/dg/python-context-object.html
-
-    Returns
-    ------
-    Whatever you want to return to the cloudwatch log
-
+    Args:
+        event: dict event
+        context: Lambda Context runtime methods and attributes. Doc: https://docs.aws.amazon.com/lambda/latest/dg/python-context-object.html
+    Returns: dict for logging
     """
 
-    path = os.path.abspath('test2.html')
+    path = os.path.abspath('test.html')
     convert(f'file:///{path}', 'sample.pdf', print_options={})
 
     return {

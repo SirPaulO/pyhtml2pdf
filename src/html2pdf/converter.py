@@ -24,7 +24,7 @@ def convert(
     power: int = 0,
     install_driver: bool = True,
     print_options: dict = None,
-):
+) -> None:
     """
     Convert a given html file or website into PDF
 
@@ -48,7 +48,7 @@ def convert(
             file.write(result)
 
 
-def __send_devtools(driver: WebDriver, cmd, params: dict | None = None):
+def __send_devtools(driver: WebDriver, cmd, params: dict | None = None) -> dict:
     params = params or {}
     resource = "/session/%s/chromium/send_command_and_get_result" % driver.session_id
     url = driver.command_executor._url + resource
@@ -65,33 +65,28 @@ def __get_pdf_from_html(
     timeout: int,
     install_driver: bool,
     print_options: dict,
-):
-    import os
-
-    os.environ['DISPLAY'] = ':10.0'
+) -> bytes:
 
     webdriver_options = Options()
-    webdriver_prefs = {"useAutomationExtension": False}
+    webdriver_prefs = {}  # e.g. {"useAutomationExtension": False}
 
-    webdriver_options.add_argument("headless")
     webdriver_options.add_argument("--headless")
-    print("HOLA123")
-    #webdriver_options.add_argument("--disable-gpu")
+    webdriver_options.add_argument("--disable-gpu")
     webdriver_options.add_argument("--no-sandbox")
     webdriver_options.add_argument("--disable-dev-shm-usage")
-    webdriver_options.add_argument('--profile-directory=Default')
-    webdriver_options.add_argument('--user-data-dir=~/.config/google-chrome')
-    webdriver_options.add_argument("--crash-dumps-dir=/tmp")
-    webdriver_options.add_argument("--remote-debugging-pipe")
-    #webdriver_options.add_argument("--window-size=1920x1080")
 
-    #webdriver_options.add_argument("start-maximized")  # open Browser in maximized mode
-    #webdriver_options.add_argument("disable-infobars")  # disabling infobars
-    #webdriver_options.add_argument("--disable-extensions")  # disabling extensions
-    #webdriver_options.add_argument("--remote-debugging-port=9222")
+    # Other options
+    # --profile-directory=Default
+    # --user-data-dir=~/.config/google-chrome
+    # --crash-dumps-dir=/tmp
+    # --window-size=1920x1080
+    # --remote-debugging-pipe
+    # --start-maximized
+    # --disable-infobars
+    # --disable-extensions
+    # --remote-debugging-port=9222
 
     webdriver_options.experimental_options["prefs"] = webdriver_prefs
-
     webdriver_prefs["profile.default_content_settings"] = {"images": 2}
 
     if install_driver:
